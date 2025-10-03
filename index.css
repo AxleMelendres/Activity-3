@@ -251,3 +251,14 @@ body::before {
     transform: translateY(0);
   }
 }
+
+.error {
+            color: #ff6b6b;
+            font-size: 13px;
+            margin-top: 5px;
+            display: block;
+        }
+        
+        input.error {
+            border-color: #ff6b6b !important;
+        }

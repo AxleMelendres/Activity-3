@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strawhat Pirates - Meet the Crew</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="menu.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(document).ready(function() {
+        // Check if user is logged in
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const username = localStorage.getItem('username');
+        
+        if (isLoggedIn !== 'true') {
+            // Redirect to login if not logged in
+            alert('Please login first!');
+            window.location.href = 'index.html';
+        } else {
+            // Display welcome message with username in hero section
+            $('.hero-subtitle').text('Welcome aboard, Captain ' + username + '! Meet the legendary crew sailing towards the Grand Line!');
+        }
+    });
+    
+    function logout() {
+        // Clear login state
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('username');
+        
+        // Redirect to login page
+        alert('You have been logged out successfully!');
+        window.location.href = 'index.html';
+    }
+</script>
+
+<nav class="navbar navbar-expand-lg navbar-dark pirate-navbar fixed-top">
+  <div class="container">
+    
+    <a class="navbar-brand d-flex align-items-center" href="#hero">
+      <i class="fas fa-skull-crossbones me-2"></i> Strawhat Pirates
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item">
+          <a class="nav-link" href="#hero">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#crew-section">Crew</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#wanted-posters">Wanted Posters</a>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-warning btn-sm ms-3" onclick="logout()">
+            <i class="fas fa-sign-out-alt me-1"></i>Logout
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <section class="hero-section">
+        <div class="container my-5"></div>
+            <div class="jolly-roger">
+                <i class="fas fa-skull-crossbones"></i>
+            </div>
+            <h1 class="hero-title">Strawhat Pirates</h1>
+            <p class="hero-subtitle">Meet the legendary crew sailing towards the Grand Line!</p>
+            <a href="#crew-section" class="btn btn-warning btn-lg">
+                <i class="fas fa-anchor me-2"></i>Meet the Crew
+                </a>
+            </button>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <div id="pirateCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000"> 
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#pirateCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="East Blue Saga"></button>
+                <button type="button" data-bs-target="#pirateCarousel" data-bs-slide-to="1" aria-label="Alabasta Arc"></button>
+                <button type="button" data-bs-target="#pirateCarousel" data-bs-slide-to="2" aria-label="Enies Lobby Arc"></button>
+                <button type="button" data-bs-target="#pirateCarousel" data-bs-slide-to="3" aria-label="Marineford Arc"></button>
+                <button type="button" data-bs-target="#pirateCarousel" data-bs-slide-to="4" aria-label="Wano Arc"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/eastblueee.jpg" class="d-block w-100 carousel-image" alt="East Blue Saga">
+                    <div class="carousel-caption">
+                        <div class="caption-content">
+                            <h3><i class="fas fa-compass me-2"></i>East Blue Saga</h3>
+                            <p>Where it all began! Luffy starts his journey and gathers his first crewmates in the peaceful East Blue.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/1200x/1f/30/3f/1f303fa4b944cceb075fd97c73c5866f.jpg" class="d-block w-100 carousel-image" alt="Alabasta Arc">
+                    <div class="carousel-caption">
+                        <div class="caption-content">
+                            <h3><i class="fas fa-pyramid me-2"></i>Alabasta Arc</h3>
+                            <p>The crew faces their first major challenge helping Princess Vivi save her desert kingdom from civil war.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/1200x/15/9d/18/159d18935c50e74e7db82aeb94075568.jpg" class="d-block w-100 carousel-image" alt="Enies Lobby Arc">
+                    <div class="carousel-caption">
+                        <div class="caption-content">
+                            <h3><i class="fas fa-gavel me-2"></i>Enies Lobby Arc</h3>
+                            <p>The Strawhats declare war on the World Government to rescue Robin from the Gates of Justice!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/1200x/c7/a0/39/c7a039f43fd8c358d89e750c0834ac59.jpg" class="d-block w-100 carousel-image" alt="Marineford Arc">
+                    <div class="carousel-caption">
+                        <div class="caption-content">
+                            <h3><i class="fas fa-anchor me-2"></i>Marineford War</h3>
+                            <p>The greatest war in pirate history! Luffy fights to save his brother Ace at Marine Headquarters.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/1200x/94/3f/4c/943f4c2aa6b6dcd7256a51ca54b10da0.jpg" class="d-block w-100 carousel-image" alt="Wano Arc">
+                    <div class="carousel-caption">
+                        <div class="caption-content">
+                            <h3><i class="fas fa-torii-gate me-2"></i>Wano Country Arc</h3>
+                            <p>The crew liberates the isolated samurai country and Luffy awakens his true power "Sun God Nika" as he fights One of the Four Emperor of the Sea, "King of the Beast" Kaido</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#pirateCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#pirateCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="crew-stats">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <div class="stat-number">10</div>
+                        <div>Crew Members</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <div class="stat-number">34</div>
+                        <div>Arcs</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <div class="stat-number">11</div>
+                        <div>Sagas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="crew-section">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="pirate-card">
+                    <div class="card-header">
+                        <h3 class="pirate-name">Monkey D. Luffy</h3>
+                        <p class="pirate-nickname">"Emperor of the Sea"</p>
+                        <p class="pirate-role">Captain</p>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.pinimg.com/736x/02/bc/1d/02bc1ddfb478c7069ac1db5017955648.jpg" 
+                             alt="Monkey D. Luffy" 
+                             class="pirate-image mb-3">
+                        <p class="pirate-description">
+                            The rubber-powered captain with an unbreakable will and an insatiable appetite. Dreams of becoming the Pirate King!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="pirate-card">
+                    <div class="card-header">
+                        <h3 class="pirate-name">Roronoa Zoro</h3>
+                        <p class="pirate-nickname">"King of Hell - Wings of the Pirate King"</p>
+                        <p class="pirate-role">Swordsman</p>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.pinimg.com/736x/1b/59/7d/1b597d6c1baf306d3e945d12dfefcc24.jpg" 
+                             alt="Roronoa Zoro" 
+                             class="pirate-image mb-3">
+                        <p class="pirate-description">
+                            The three-sword wielding warrior with an unmatched dedication to becoming the world's greatest swordsman.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="pirate-card">
+                    <div class="card-header">
+                        <h3 class="pirate-name">Nami</h3>
+                        <p class="pirate-nickname">"Cat Burglar"</p>
+                        <p class="pirate-role">Navigator</p>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.pinimg.com/736x/d6/fd/5e/d6fd5e7769ed4903ef874731090454cb.jpg" 
+                             alt="Nami" 
+                             class="pirate-image mb-3">
+                        <p class="pirate-description">
+                            The brilliant navigator who can predict weather patterns and guide the crew through the most dangerous seas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="pirate-card">
+                    <div class="card-header">
+                        <h3 class="pirate-name">Usopp</h3>
+                        <p class="pirate-nickname">"God Ussop"</p>
+                        <p class="pirate-role">Sniper</p>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.pinimg.com/736x/18/e0/de/18e0de11ec8fa33d983ea10484ad2510.jpg" 
+                             alt="Usopp" 
+                             class="pirate-image mb-3">
+                        <p class="pirate-description">
+                            The sharpshooter with incredible aim and creativity, always ready with a tall tale and ingenious inventions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="pirate-card">
+                    <div class="card-header">
+                        <h3 class="pirate-name">Sanji</h3>
+                        <p class="pirate-nickname">"Black Leg - Wings of the Pirate King"</p>
+                        <p class="pirate-role">Cook</p>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.pinimg.com/736x/53/4e/07/534e070a7b5538609cfad626795a7e7a.jpg" 
+                             alt="Sanji" 
+                             class="pirate-image mb-3">
+                        <p class="pirate-description">
+                            The passionate chef whose kicks are as powerful as his cooking. Never lets anyone go hungry on his watch.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="pirate-card">
+                    <div class="card-header">
+                        <h3 class="pirate-name">Tony Tony Chopper</h3>
+                        <p class="pirate-nickname">"Cotton Candy Lover"</p>
+                        <p class="pirate-role">Doctor</p>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.pinimg.com/1200x/10/df/59/10df59308d9509b3d454f2d836362ae7.jpg" 
+                             alt="Tony Tony Chopper" 
+                             class="pirate-image mb-3">
+                        <p class="pirate-description">
+                            The adorable reindeer doctor who can transform and heal any wound. Dreams of curing every disease.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="pirate-card">
+                    <div class="card-header">
+                        <h3 class="pirate-name">Nico Robin</h3>
+                        <p class="pirate-nickname">"Devil Child"</p>
+                        <p class="pirate-role">Archaeologist</p>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.pinimg.com/736x/e3/7e/42/e37e4210a3dd55db23f9dbc9affd0c83.jpg" 
+                             alt="Nico Robin" 
+                             class="pirate-image mb-3">
+                        <p class="pirate-description">
+                            The mysterious archaeologist who can read ancient texts and uncover the secrets of the lost history.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="pirate-card">
+                    <div class="card-header">
+                        <h3 class="pirate-name">Franky</h3>
+                        <p class="pirate-nickname">"Cyborg"</p>
+                        <p class="pirate-role">Shipwright</p>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.pinimg.com/736x/b1/45/28/b14528c261ec1b5377c7ffbe97247d2e.jpg" 
+                             alt="Franky" 
+                             class="pirate-image mb-3">
+                        <p class="pirate-description">
+                            The cyborg shipwright who built the Thousand Sunny. Always ready to show off his "SUPER" inventions!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="pirate-card">
+                    <div class="card-header">
+                        <h3 class="pirate-name">Brook</h3>
+                        <p class="pirate-nickname">"Soul King"</p>
+                        <p class="pirate-role">Musician</p>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.pinimg.com/736x/23/00/ed/2300ed41e8ed075a1043a0a206243ecb.jpg" 
+                             alt="Brook" 
+                             class="pirate-image mb-3">
+                        <p class="pirate-description">
+                            The skeleton musician who brings joy and music to the crew. His soul-stirring melodies can move anyone to tears.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="pirate-card">
+                    <div class="card-header">
+                        <h3 class="pirate-name">Jinbe</h3>
+                        <p class="pirate-nickname">"First Son of the Sea"</p>
+                        <p class="pirate-role">Helmsman</p>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.pinimg.com/1200x/31/ce/54/31ce548706a44b8fa8413bf5d6081a46.jpg" 
+                             alt="Jinbe" 
+                             class="pirate-image mb-3">
+                        <p class="pirate-description">
+                            The wise fish-man helmsman and former Warlord. His experience and strength guide the crew through treacherous waters.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5" id="wanted-posters">
+        <h2 class="text-center mb-4 wanted-section-title"><i class="fas fa-skull-crossbones me-2"></i>Wanted Posters</h2>
+        <div class="row g-4">
+            
+
+            <div class="col-md-4 col-lg-3">
+                <div class="card shadow-sm wanted-card">
+                    <img src="https://i.pinimg.com/1200x/82/9a/a4/829aa491b3856857b2508af9424d6719.jpg" class="card-img-top" alt="Monkey D. Luffy Wanted Poster">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Monkey D. Luffy</h5>
+                        <p class="card-text bounty">₿3,000,000,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+                <div class="card shadow-sm wanted-card">
+                    <img src="https://i.pinimg.com/736x/f1/ac/cb/f1accb0d87ef3d757e2492d257230307.jpg" class="card-img-top" alt="Roronoa Zoro Wanted Poster">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Roronoa Zoro</h5>
+                        <p class="card-text bounty">₿1,111,000,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+                <div class="card shadow-sm wanted-card">
+                    <img src="https://i.pinimg.com/1200x/41/1e/db/411edbfc18652a25e56271b3c0120e46.jpg" class="card-img-top" alt="Nami Wanted Poster">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Nami</h5>
+                        <p class="card-text bounty">₿366,000,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+                <div class="card shadow-sm wanted-card">
+                    <img src="https://i.pinimg.com/736x/35/0a/c1/350ac1c6eb6f26b41830ab71d6e625b9.jpg" class="card-img-top" alt="Usopp Wanted Poster">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Usopp</h5>
+                        <p class="card-text bounty">₿500,000,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+                <div class="card shadow-sm wanted-card">
+                    <img src="https://i.pinimg.com/736x/6e/6b/29/6e6b29ce394647239b93cf79e83583a6.jpg" class="card-img-top" alt="Sanji Wanted Poster">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sanji</h5>
+                        <p class="card-text bounty">₿1,032,000,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+                <div class="card shadow-sm wanted-card">
+                    <img src="https://i.pinimg.com/736x/49/21/8d/49218d1d169c358d86057a9fc1d9fb76.jpg" class="card-img-top" alt="Chopper Wanted Poster">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Tony Tony Chopper</h5>
+                        <p class="card-text bounty">₿1,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+                <div class="card shadow-sm wanted-card">
+                    <img src="https://i.pinimg.com/736x/6b/bb/39/6bbb39d92053dca072408395f01b7d26.jpg" class="card-img-top" alt="Nico Robin Wanted Poster">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Nico Robin</h5>
+                        <p class="card-text bounty">₿930,000,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+                <div class="card shadow-sm wanted-card">
+                    <img src="https://i.pinimg.com/736x/dc/fd/d1/dcfdd13267bfd7df66b24c25194e6a42.jpg" class="card-img-top" alt="Franky Wanted Poster">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Franky</h5>
+                        <p class="card-text bounty">₿394,000,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+                <div class="card shadow-sm wanted-card">
+                    <img src="https://i.pinimg.com/736x/3d/af/f4/3daff4e176186f9fbd0de6979c58e58a.jpg" class="card-img-top" alt="Brook Wanted Poster">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Brook</h5>
+                        <p class="card-text bounty">₿383,000,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+                <div class="card shadow-sm wanted-card">
+                    <img src="https://i.pinimg.com/736x/4d/d0/3c/4dd03c6028aa1ee2956bf72b003455be.jpg" class="card-img-top" alt="Jinbe Wanted Poster">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Jinbe</h5>
+                        <p class="card-text bounty">₿1,100,000,000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5" id="pirate-king">
+  <h2 class="text-center mb-4 strawhat-quote-title">
+    ☠️ Strawhats' Declaration ☠️
+  </h2>
+  <p class="text-center lead mb-4">
+    "Luffy will become the Pirate King!"
+  </p>
+
+   Video Embed 
+  <div class="ratio ratio-16x9 shadow rounded">
+    <video controls class="w-100">
+      <source src="video/strawhat.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 One Piece. Eiichiro Oda</p>
+            <p><i class="fas fa-anchor"></i> "I'm gonna become the King of Pirates!" - Monkey D. Luffy</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

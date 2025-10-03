@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration Page</title>
   <link rel="stylesheet" href="index.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+  <style>
+    /* Added error styling for jQuery Validation */
+    .error {
+        color: #ff6b6b;
+        font-size: 13px;
+        margin-top: 5px;
+        display: block;
+    }
+    
+    input.error {
+        border-color: #ff6b6b !important;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -13,22 +28,21 @@
         <h1>Create Account</h1>
         <p>Join our nakama adventure!</p>
       </div>
-
-      <form class="login-form">
+      <form id="registerForm" class="login-form">
         <div class="form-group">
           <label for="fullname">Full Name</label>
-          <input type="text" id="fullname" name="fullname" required>
+          <input type="text" id="fullname" name="fullname">
         </div>
 
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required>
+          <input type="text" id="email" name="email">
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
           <div class="password-input">
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password">
             <button type="button" class="toggle-password" onclick="togglePassword()">
               <span class="show-text">👁️</span>
               <span class="hide-text" style="display: none;">🙈</span>
@@ -39,7 +53,7 @@
         <div class="form-group">
           <label for="confirm-password">Confirm Password</label>
           <div class="password-input">
-            <input type="password" id="confirm-password" name="confirm-password" required>
+            <input type="password" id="confirm-password" name="confirm-password">
             <button type="button" class="toggle-password" onclick="toggleConfirmPassword()">
               <span class="show-text">👁️</span>
               <span class="hide-text" style="display: none;">🙈</span>
@@ -88,6 +102,59 @@
         hideText.style.display = 'none';
       }
     }
+
+    $(document).ready(function() {
+      // jQuery Validation
+      $("#registerForm").validate({
+        rules: {
+          fullname: {
+            required: true,
+            minlength: 3
+          },
+          email: {
+            required: true,
+            email: true
+          },
+          password: {
+            required: true,
+            minlength: 5
+          },
+          "confirm-password": {
+            required: true,
+            minlength: 5,
+            equalTo: "#password"
+          }
+        },
+        messages: {
+          fullname: {
+            required: "Please enter your full name",
+            minlength: "Name must be at least 3 characters"
+          },
+          email: {
+            required: "Please enter your email address",
+            email: "Please enter a valid email address"
+          },
+          password: {
+            required: "Please enter a password",
+            minlength: "Password must be at least 5 characters"
+          },
+          "confirm-password": {
+            required: "Please confirm your password",
+            minlength: "Password must be at least 5 characters",
+            equalTo: "Passwords do not match"
+          }
+        },
+        submitHandler: function(form) {
+          // Show success message
+          alert('Registration successful!');
+          
+          // Redirect to login page
+          window.location.href = 'index.html';
+          
+          return false; // Prevent default form submission
+        }
+      });
+    });
   </script>
 </body>
 </html>

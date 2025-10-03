@@ -1,0 +1,336 @@
+:root {
+  --pirate-red: #dc2626;
+  --ocean-blue: #1e40af;
+  --treasure-gold: #f59e0b;
+}
+
+body {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+}
+
+/* Pirate Navbar */
+.pirate-navbar {
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  border-bottom: 3px solid #b8860b; /* golden border */
+  font-family: "Times New Roman", serif;
+}
+
+.pirate-navbar .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fdf6e3 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pirate-navbar .nav-link {
+  color: #fdf6e3 !important;
+  margin-left: 1rem;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.pirate-navbar .nav-link:hover {
+  color: #ffd700 !important; /* gold hover */
+  transform: scale(1.1);
+}
+
+.pirate-navbar .navbar-toggler {
+  border: none;
+}
+
+.pirate-navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.hero-section {
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.wanted-section-title {
+  font-family: "Times New Roman", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2b1a0f;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  display: block;
+  width: fit-content;
+  margin: 0 auto 30px auto;
+  padding: 12px 40px;
+  background: #fdf1d6;
+  border: 4px solid #5a3d1c;
+  border-radius: 8px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px #fff2cc;
+}
+
+.pirate-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border: 3px solid transparent;
+}
+
+.pirate-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  border-color: var(--treasure-gold);
+}
+
+.card-header {
+  background: linear-gradient(45deg, var(--pirate-red), var(--treasure-gold));
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.pirate-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Added styling for pirate nicknames */
+.pirate-nickname {
+  font-size: 0.95rem;
+  font-style: italic;
+  opacity: 0.85;
+  margin: 0.3rem 0;
+  color: #fff3cd;
+}
+
+.pirate-role {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.pirate-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--ocean-blue), var(--treasure-gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 3rem;
+  color: white;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pirate-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--treasure-gold);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.pirate-image:hover {
+  transform: scale(1.05);
+}
+
+.crew-stats {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 3rem 0;
+  text-align: center;
+  color: white;
+}
+
+.stat-item {
+  margin: 1rem 0;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--treasure-gold);
+}
+
+.jolly-roger {
+  font-size: 4rem;
+  color: var(--treasure-gold);
+  margin-bottom: 1rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Added comprehensive carousel styling with pirate theme */
+.carousel {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border: 3px solid var(--treasure-gold);
+}
+
+.carousel-image {
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(0.8);
+  transition: all 0.3s ease;
+}
+
+.carousel-item:hover .carousel-image {
+  filter: brightness(1);
+  transform: scale(1.02);
+}
+
+.carousel-caption {
+  background: linear-gradient(45deg, rgba(220, 38, 38, 0.9), rgba(245, 158, 11, 0.9));
+  border-radius: 15px;
+  padding: 1.5rem;
+  bottom: 2rem;
+  left: 10%;
+  right: 10%;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.caption-content h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.caption-content p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.95;
+}
+
+.carousel-indicators {
+  bottom: -3rem;
+}
+
+.carousel-indicators button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--treasure-gold);
+  border: 2px solid white;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  opacity: 1;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px var(--treasure-gold);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
+  background: linear-gradient(45deg, rgba(220, 38, 38, 0.7), rgba(245, 158, 11, 0.7));
+  border-radius: 0 15px 15px 0;
+  transition: all 0.3s ease;
+}
+
+.carousel-control-next {
+  border-radius: 15px 0 0 15px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: linear-gradient(45deg, rgba(220, 38, 38, 0.9), rgba(245, 158, 11, 0.9));
+  transform: scale(1.05);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 2rem;
+  height: 2rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.wanted-card {
+  border: 3px solid #000;
+  background: #fdf6e3;
+  font-family: "Times New Roman", serif;
+  transition: transform 0.3s ease;
+}
+.wanted-card img {
+  border-bottom: 2px solid #000;
+}
+.wanted-card:hover {
+  transform: scale(1.05);
+}
+.wanted-card .bounty {
+  font-size: 1.2rem;
+  color: #b22222;
+  font-weight: bold;
+}
+
+.strawhat-quote-title {
+  font-family: "Pirata One", cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f8e29a;
+  text-shadow: 2px 2px 6px #000;
+}
+
+#pirate-king p {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
